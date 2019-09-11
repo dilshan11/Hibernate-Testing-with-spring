@@ -21,11 +21,10 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="spring-aop-5.1.1.RELEASE-javadoc" level="project" />
-    <orderEntry type="library" name="javadocs" level="project" />
-    <orderEntry type="library" name="mysql-connector-java-8.0.13" level="project" />
     <orderEntry type="library" name="activation-jaf1.1.1" level="project" />
-    <orderEntry type="library" name="antlr-2.7.7" level="project" />
     <orderEntry type="library" name="codemodel" level="project" />
     <orderEntry type="library" name="jaxb-core-2.2.7" level="project" />
+    <orderEntry type="library" name="mysql-connector-java-8.0.17" level="project" />
+    <orderEntry type="library" name="antlr-2.7.7" level="project" />
   </component>
 </module>

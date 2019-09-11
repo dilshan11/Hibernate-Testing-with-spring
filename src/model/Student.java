@@ -19,7 +19,7 @@ public class Student {
     @Column(name = "email")
     private String email;
 
-    @OneToMany(mappedBy = "student",cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.LAZY,mappedBy = "student",cascade = CascadeType.ALL)
     private List<Shoes> shoess;
 
     @OneToOne(cascade=CascadeType.ALL)
@@ -75,7 +75,13 @@ public class Student {
         this.address = address;
     }
 
+    public List<Shoes> getShoess() {
+        return shoess;
+    }
 
+    public void setShoess(List<Shoes> shoess) {
+        this.shoess = shoess;
+    }
 
     public void add(Shoes shoes){
         if(shoess==null){
@@ -84,4 +90,16 @@ public class Student {
         shoess.add(shoes);
         shoes.setStudent(this);
     }
+
+//    @Override
+//    public String toString() {
+//        return "Student{" +
+//                "id=" + id +
+//                ", fristName='" + fristName + '\'' +
+//                ", lastName='" + lastName + '\'' +
+//                ", email='" + email + '\'' +
+//                ", shoess=" + shoess +
+//                ", address=" + address +
+//                '}';
+//    }
 }

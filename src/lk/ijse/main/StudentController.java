@@ -1,8 +1,6 @@
 package lk.ijse.main;
 
-import model.Address;
-import model.Shoes;
-import model.Student;
+import model.*;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,7 +52,7 @@ public class StudentController {
         Session session=sessionFactory.getCurrentSession();
         try{
             session.beginTransaction();
-            Student student=new Student(17,"namal","amila","amila.gmail");
+            Student student=new Student(29,"namal","amila","amila.gmail");
             Shoes shoes1=new Shoes("dsi");
             Shoes shoes2=new Shoes("dsi");
             Shoes shoes3=new Shoes("dsi");
@@ -63,6 +61,33 @@ public class StudentController {
             student.add(shoes3);
 
             session.save(student);
+            session.getTransaction().commit();
+        }finally {
+            session.close();
+        }
+    }
+    public void getshows(){
+        Session session=sessionFactory.getCurrentSession();
+        try{
+            session.beginTransaction();
+            Student student=session.get(Student.class,19);
+
+            session.getTransaction().commit();
+            System.out.println(student.getEmail());
+        }finally {
+            session.close();
+        }
+    }
+    public void save_user_grou(){
+        Session session=sessionFactory.getCurrentSession();
+        try{
+            session.beginTransaction();
+            User user=new User(1,"shan","123");
+            Group1 group=new Group1(1,"cis");
+            User_Group user_group=new User_Group(1,34);
+            user_group.setGroup(group);
+            user_group.setUser(user);
+            session.save(user_group);
             session.getTransaction().commit();
         }finally {
             session.close();

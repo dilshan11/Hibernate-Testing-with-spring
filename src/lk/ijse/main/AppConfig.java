@@ -1,8 +1,6 @@
 package lk.ijse.main;
 
-import model.Address;
-import model.Shoes;
-import model.Student;
+import model.*;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.springframework.context.annotation.Bean;
@@ -19,6 +17,9 @@ public class AppConfig {
                 addAnnotatedClass(Student.class)
                 .addAnnotatedClass(Address.class)
                 .addAnnotatedClass(Shoes.class)
+                .addAnnotatedClass(User.class)
+                .addAnnotatedClass(Group1.class)
+                .addAnnotatedClass(User_Group.class)
                 .buildSessionFactory();
         return sessionFactory;
     }
